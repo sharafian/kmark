@@ -24,8 +24,7 @@ if (process.argv[2] == undefined) {
 }
 
 var text = fs.readFileSync(process.argv[2], "utf-8");
-var html = marked(text);
-var katex_html = compile_expressions(html);
+var katex_html = marked(compile_expressions(text));
 
 if (add_header) {
   katex_html =
