@@ -1,32 +1,14 @@
 #!/usr/bin/env node
 
-
 var fs = require("fs");
 var marked = require("marked");
 var katex = require("katex");
 
 function compile_expressions(text) {
-
-  var reg = new RegExp(/\$\$(.*)\$\$/m);
-  var in_reg = new RegExp(/\\\((.*)\\\)/m);
-  var res, disp = true;
-
-  while (true) {
-
-    if ((res = reg.exec(text)) !== null) {
-      disp = true; 
-    } else if ((res = in_reg.exec(text)) !== null) {
-      disp = false;
-    } else {
-      break;
-    }
-    
-    var render = katex.renderToString(res[1])
-    render = disp? ("<p>" + render + "</p>"):(render);
-
-    text = text.replace(res[0], render);
+  var res, reg = new RegExp(/\$\$(.+?)\$\$/m);
+  while ((res = reg.exec(text)) !== null) {
+    text = text.replace(res[0], katex.renderToString(res[1]));
   }
-
   return text;
 }
 
