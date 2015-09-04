@@ -15,3 +15,6 @@ Math equations are delimited by `$$` or `\(` + `\)`.
 Note: The output of this command won't work unless you include
 the CSS file for KaTeX. Also don't forget to put `<meta charset=utf-8>`
 in the head.
+
+The `-h` flag will generate a complete file with a header and basic style,
+that assumes the katex directory is in the same directory of the file.
