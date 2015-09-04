@@ -8,7 +8,7 @@ html pages.
 
 ##Usage
 
-Math equations are delimited by `$$` or `\(` + `\)`.
+Math equations are delimited by `$$`.
 
 `kmark input.md > out.html`
 
