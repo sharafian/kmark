@@ -1,12 +1,12 @@
-#KMark
+# KMark
 
-##Description
+## Description
 
 This is a simple node script that wraps marked and KaTeX
 so that you can easily compile html with LaTeX math into static
 html pages.
 
-##Usage
+## Usage
 
 Math equations are delimited by `$$`.
 
